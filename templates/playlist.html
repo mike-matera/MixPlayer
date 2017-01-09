@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Erratic Pleasure</title>
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+body,h1,h2,h3,h4,h5,h6 {
+	font-family: "Lato", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    line-height: 1.8;
+ 	background: black;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('static/record.png');
+    min-height: 100%;
+}
+
+.w3-wide {letter-spacing: 10px;}
+
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1 {
+        background-attachment: scroll;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-hide-small">ERRATIC PLEASURE</span>
+    <span class="w3-center w3-padding-large w3-black w3-wide w3-hide-medium w3-hide-large">ERRATIC PLEASURE</span>
+  </div>
+</div>
+
+<div class="w3-content w3-text-light-grey w3-center w3-padding-64" id="mixes">
+	{% for mix in mixes %}
+	<h4>{{ mix.name }}</h4>
+	<audio controls="controls" preload="metadata">
+  		<source src="{{ mix.url }}">
+	</audio>
+	{% endfor %}
+</div>
+
+<footer class="w3-center w3-black w3-text-grey w3-opacity w3-hover-opacity-off">
+	<small>Icon Copyright Creative Stall from the Noun Project</small>
+</footer>
+
+<body>
+</html>
