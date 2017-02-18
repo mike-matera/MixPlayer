@@ -124,9 +124,13 @@ class MixList(webapp2.RequestHandler):
                         'name'    : md['Title'],
                         'comment' : md['Comment'],
                         'url'     : blob.public_url,
-                        'img'     : image_url
+                        'img'     : image_url,
+                        'date'    : blob.updated
                     })
         
+
+                template_values['mixes'] = sorted (template_values['mixes'], key=lambda k: k['date'], reverse=True)
+
         template = JINJA_ENVIRONMENT.get_template('playlist.html')
         self.response.write(template.render(template_values))
                    
