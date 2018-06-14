@@ -33,6 +33,11 @@ body, html {
     min-height: 100%;
 }
 
+.label {
+	font-family: "Lato";
+    color: white;
+}
+
 .nervous {font-family: Nervous;} 
 
 .w3-wide {letter-spacing: 10px;}
