@@ -7,3 +7,5 @@ static/
 *.swp 
 secrets/
 env/
+.idea/
+
