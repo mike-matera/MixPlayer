@@ -40,7 +40,15 @@ body, html {
 
 .nervous {font-family: Nervous;} 
 
-.w3-wide {letter-spacing: 10px;}
+.mix-title {
+    letter-spacing: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.mix-comment {
+    letter-spacing: 1px;
+}
 
 .w3-hover-opacity {cursor: pointer;}
 
