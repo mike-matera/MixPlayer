@@ -1,17 +1,15 @@
 {% for mix in mixes %}
     <div style="height:2em;"></div>
-        <div class="w3-container w3-display-container miximg w3-center" style="background-image: url('{{mix.image.url}}'); margin:auto; height:256px; width:80%; min-width:400px">
-            <div class="w3-display-middle" style="width: 80%">
-                <div class="mix-box w3-header w3-center">
-                    <div class="mix-title">
-                        <a href="{{mix.permalink}}">{{ mix.title }}</a>
-                    </div>
-                    <audio controls="controls" preload="metadata" style="width: 80%; min-width: 300px;">
-                        <source src="{{ mix.url }}">
-                    </audio>
-                    <div class="mix-comment">
-                        {{ mix.date.strftime('%B %d, %Y') }} <br/> {{ mix.comment }}
-                    </div>
+        <div class="mix-img w3-container w3-display-container w3-center" style="background-image: url('{{mix.image.url}}');">
+            <div class="mix-box w3-display-middle">
+                <div class="mix-title">
+                    <a href="{{mix.permalink}}">{{ mix.title }}</a>
+                </div>
+                <audio controls="controls" preload="metadata" style="width: 90%; min-width: 350px;">
+                    <source src="{{ mix.url }}">
+                </audio>
+                <div class="mix-comment">
+                    {{ mix.date.strftime('%B %d, %Y') }} <br/> {{ mix.comment }}
                 </div>
             </div>
         </div>

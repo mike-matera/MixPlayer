@@ -13,22 +13,11 @@ body, html {
  	background: black;
 }
 
-/* Create a Parallax Effect */
-.bgimg-1 {
+.bgimg {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.miximg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
     background-image: url('/static/record.png');
     min-height: 100%;
 }
@@ -38,11 +27,25 @@ body, html {
     color: white;
 }
 
-.nervous {font-family: Nervous;} 
+.nervous {
+    font-family: Nervous;
+}
+
+.mix-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:auto;
+    height:256px;
+    min-width:420px;
+    max-width:1080px;
+}
 
 .mix-box {
     background: rgba(0, 0, 0, 0.7);
     padding:10px;
+    width: 80%;
+    min-width: 420px;
 }
 
 .mix-title {
@@ -59,13 +62,8 @@ body, html {
     text-shadow: 2px 2px 4px black;
 }
 
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1 {
-        background-attachment: scroll;
-    }
+.w3-hover-opacity {
+    cursor: pointer;
 }
 
 a:link {
