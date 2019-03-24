@@ -1,10 +1,13 @@
-import io
-import sys
-import re
-import logging
+"""
+MixPlayer Application
+
+Routes:
+
+/ - A list of all mixes
+/mix/<name> - A page with a single mix.
+"""
 
 from flask import Flask, render_template
-
 from models import MixFile
 
 app = Flask(__name__)
@@ -20,7 +23,3 @@ def index():
     mixes = list(MixFile.all())
     mixes = sorted(mixes, key=lambda k: k.date, reverse=True)
     return render_template('playlist.html', mixes=mixes)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
