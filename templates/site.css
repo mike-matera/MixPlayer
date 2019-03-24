@@ -44,7 +44,10 @@ body, html {
     background: rgba(0, 0, 0, 0.7);
     padding:10px;
     width: 80%;
-    min-width: 400px;
+}
+
+.mix-player {
+    width: 90%;
 }
 
 .mix-title {
@@ -59,6 +62,16 @@ body, html {
     letter-spacing: 1px;
     color: white;
     text-shadow: 2px 2px 4px black;
+}
+
+/* On small screens */
+@media only screen and (max-width: 600px) {
+    .mix-player {
+        width: 100%;
+    }
+    .mix-box {
+        width: 100%;
+    }
 }
 
 .w3-hover-opacity {
