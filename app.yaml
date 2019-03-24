@@ -1,8 +1,5 @@
 runtime: python37
 
-env_variables:
-  GOOGLE_APPLICATION_CREDENTIALS: ./secrets/erratic-pleasure-fc01b622c9fe.json
-
 handlers:
   # This configures Google App Engine to serve the files in the app's static
   # directory.
