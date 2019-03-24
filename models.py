@@ -12,14 +12,12 @@ import urllib.parse
 
 from google.cloud import storage
 
-# Instantiates a client
-storage_client = storage.Client()
 
-# The name for the new bucket
-#bucket_name = 'erratic-pleasure.appspot.com'
+storage_client = storage.Client()
 bucket_name = 'erratic-pleasure.appspot.com'
 storage_client = storage.Client()
 bucket = storage_client.get_bucket(bucket_name)
+
 
 class CachedImage:
     """This is a model the represents a GCS cached image."""
