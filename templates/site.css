@@ -40,14 +40,23 @@ body, html {
 
 .nervous {font-family: Nervous;} 
 
+.mix-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding:10px;
+}
+
 .mix-title {
     letter-spacing: 10px;
     font-weight: bold;
     font-size: large;
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 
 .mix-comment {
     letter-spacing: 1px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
 }
 
 .w3-hover-opacity {cursor: pointer;}
