@@ -1,5 +1,8 @@
 runtime: python37
 
+env_variables:
+  GOOGLE_APPLICATION_CREDENTIALS: ./secrets/google-app-creds.json
+
 handlers:
   # This configures Google App Engine to serve the files in the app's static
   # directory.
