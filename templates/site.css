@@ -37,7 +37,6 @@ body, html {
     background-size: cover;
     margin:auto;
     height:256px;
-    min-width:420px;
     max-width:1080px;
 }
 
@@ -45,7 +44,7 @@ body, html {
     background: rgba(0, 0, 0, 0.7);
     padding:10px;
     width: 80%;
-    min-width: 420px;
+    min-width: 400px;
 }
 
 .mix-title {
