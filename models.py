@@ -57,7 +57,7 @@ class MixFile:
     def __init__(self, blob):
 
         self.blob = blob
-        self.title = self.blob.metadata.get('Title', self.blob.name)
+        self.title = self.blob.metadata.get('Title', self.blob.name) # FIXME: "Title "
         self.comment = self.blob.metadata.get('Comment', '')
         self.date = datetime.datetime.strptime(self.blob.metadata['Date'], '%Y-%m-%d')
         self.image = CachedImage(self.blob)
@@ -67,7 +67,7 @@ class MixFile:
     @staticmethod
     def all(filter=None):
         for blob in bucket.list_blobs():
-            if blob.name.startswith('mixes/') and blob.content_type == 'audio/mp3':
+            if blob.name.startswith('mixes/') and blob.content_type in ['audio/mp3', 'audio/mpeg']:
                 try:
                     m = MixFile(blob)
                     if filter is None or m.title == filter:
