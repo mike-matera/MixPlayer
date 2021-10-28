@@ -4,3 +4,10 @@
     min-height: 60%;
 }
 {% endblock %}
+
+{%  block open_graph %}
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="{{ mixes[0].title }}" />
+<meta property="og:description" content="{{ mixes[0].comment }}" />
+<meta property="og:image"       content="{{ mixes[0].image.url }}" />
+{% endblock %}

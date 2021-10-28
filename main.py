@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 @app.route('/mix/<mixname>')
 def mix(mixname):
-    return render_template('singlemix.html', mixes=MixFile.all(filter=mixname))
+    return render_template('singlemix.html', mixes=list(MixFile.all(filter=mixname)))
 
 
 @app.route('/')
