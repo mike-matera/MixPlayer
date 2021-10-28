@@ -6,6 +6,6 @@ lib/
 static/
 *.swp 
 secrets/
-env/
+venv/
 .idea/
 
