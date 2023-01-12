@@ -4,23 +4,12 @@ This is an app that streams audio stored in a GCS bucket using Google App Engine
 
 ## Updated for CloudRun
 
-I've always been a fan of Google's commitment to serverless applications. 
+I've always been a fan of Google's serverless products. The first iteration of MixPlayer used the legacy AppEngine Python 2 runtime with AppEngine specific libraries (that were incomplete and deprecated). The second one updated to AppEngine Standard Edition with Python 3 and the Python client libraries that work everywhere. This version is based on CloudRun. 
 
-```console
-gcloud run deploy mix-player \
---image=gcr.io/repo-path \
---allow-unauthenticated \
---service-account=250334710383-compute@developer.gserviceaccount.com \
---region=us-central1 \
-````
+Cloud run executes any container so the code in this repo uses the general Docker build process, eliminating Google Cloud Compute specific code here. Which is awesome. 
 
-App Engine updated the Standard Environment to include a Python 3 interpreter. Apps work differently and deploying a Python 3 app is much simpler and more standard than the Python 2.7 environment. You can use any Python library that can be installed by pip. You just list them in `requirements.txt`. 
+## Stuff to Do 
 
-## Flask Application 
-
-This app is developed locally like any other Flask app, by simply executing the `main.py` file from the command line:
-
-```
-$ python3 main.py 
-```
+I put a `makefile` here because I'm old and typing `make build && make run` is easier than typing big `docker` commands. 
+ 
 
