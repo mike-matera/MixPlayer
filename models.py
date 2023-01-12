@@ -12,8 +12,6 @@ import urllib.parse
 
 from google.cloud import storage
 
-
-storage_client = storage.Client()
 bucket_name = 'erratic-pleasure.appspot.com'
 storage_client = storage.Client()
 bucket = storage_client.get_bucket(bucket_name)
