@@ -23,7 +23,12 @@ class CachedImage:
     def __init__(self, blob):
 
         url = blob.metadata['Image']
-        image_name = CachedImage._url_hash(url)
+
+        # The old versions used crc32 incorrectly creating broken filenames.
+        # This hack makes current versions generate compatible names.
+        raw = binascii.crc32(url.encode())
+        signed = struct.unpack('i', struct.pack('I', raw & 0xffffffff))
+        image_name = f"cached_images/image-{signed[0]:08x}"
 
         blob = blob.bucket.get_blob(image_name)
         if blob is None:
@@ -38,16 +43,6 @@ class CachedImage:
 
         self.url = f'https://storage.googleapis.com/{blob.bucket.name}/{image_name}'
 
-    @staticmethod
-    def _url_hash(url):
-        # The previous version used crc32 incorrectly. This creates compatibly broken filenames.
-
-        # Python 2.7 could see a signed number here. Python 3 doesn't. Convert it back to signed.
-        raw = binascii.crc32(url.encode())
-        signed = struct.unpack('i', struct.pack('I', raw & 0xffffffff))
-
-        return f"cached_images/image-{signed[0]:08x}"
-
 
 class MixFile:
     """This is a model that represents a GCS mix file."""
@@ -55,7 +50,7 @@ class MixFile:
     def __init__(self, blob):
 
         self.blob = blob
-        self.title = self.blob.metadata.get('Title', self.blob.name) # FIXME: "Title "
+        self.title = self.blob.metadata.get('Title', self.blob.name)
         self.comment = self.blob.metadata.get('Comment', '')
         self.date = datetime.datetime.strptime(self.blob.metadata['Date'], '%Y-%m-%d')
         self.image = CachedImage(self.blob)
