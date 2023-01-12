@@ -3,7 +3,6 @@
 .pydevproject
 *.pyc
 lib/
-static/
 *.swp 
 secrets/
 venv/
