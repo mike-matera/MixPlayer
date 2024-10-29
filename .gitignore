@@ -5,6 +5,6 @@
 lib/
 *.swp 
 secrets/
-venv/
+venv*/
 .idea/
 
